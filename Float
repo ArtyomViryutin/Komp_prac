@@ -1,0 +1,49 @@
+#include "Header.h"
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	system("chcp 1251");
+	system("cls");
+	Stack<float, 6> f;
+	cout << "Работа с шаблоном, содержащим элементы типа int" << endl;
+	cout << "Попробуем удалить элемент из стека до его инициализации:" << endl;
+	f.Pop();
+	Sep();
+	cout << "Инициализируем стек:" << endl;
+	f.Init();
+	Sep();
+	f.Print();
+	Sep();
+	cout << "Удалим элемент из стека:" << endl;
+	f.Pop();
+	f.Print();
+	Sep();
+	cout << "Добавим элемент в стек:" << endl;
+	f.Push(33.54);
+	f.Print();
+	Sep();
+	cout << "Попробуем добавить элемент в заполненный стек:" << endl;
+	f.Push(12.123);
+	Sep();
+	cout << "Определим размер очереди и верхний элемент без его удаления" << endl;
+	cout << "Размер очереди - " << f.Size() << "\n" << "Верхний элемент - " << f.Top() << endl;
+	Sep();
+	cout << "Проверим работоспособность оператора присваивания:" << endl;
+	Stack<float, 6> f1;
+	f1 = f;
+	cout << "Первый стек:" << endl;
+	f.Print();
+	cout << "Второй стек:" << endl;
+	f1.Print();
+	Sep();
+	cout << "Удалим из второго стека элемент и посмотрим не изменился ли первый стек:" << endl;
+	f1.Pop();
+	cout << "Первый стек:" << endl;
+	f.Print();
+	cout << "Второй стек:" << endl;
+	f1.Print();
+	system("pause");
+	return 0;
+}
+
+
